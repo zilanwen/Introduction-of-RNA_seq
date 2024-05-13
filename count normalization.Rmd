@@ -31,7 +31,8 @@ GitHub is an online software development platform. It's used for storing, tracki
 *  **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
 ![local path](D:/ZilanWen/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
-* **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to 
+* **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+![local path](D:/ZilanWen/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
 
 
 # Count normalization with DESeq2 
