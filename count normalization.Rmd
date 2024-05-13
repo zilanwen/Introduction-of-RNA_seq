@@ -1,5 +1,5 @@
 ---
-title: "Diffirential Gene Expression Analysis "
+title: "Differential Gene Expression Analysis "
 author: "Zilan Wen"
 date: "2024-05-13"
 output: html_document
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ###  Install R package
 Install R <https://posit.co/download/rstudio-desktop/>
 
-ChecK the current R version
+Check the current R version
 
 ```{r,eval=FALSE} 
 R.Version()#the code in the code chunk will not be run.
