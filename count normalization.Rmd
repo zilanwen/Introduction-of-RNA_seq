@@ -18,40 +18,65 @@ Check the current R version
 R.Version()#the code in the code chunk will not be run.
 ```
 
-### Github
+### GitHub
 GitHub is an online software development platform. It's used for storing, tracking, and collaborating on software projects. It makes it easy for developers to share code files and collaborate with fellow developers on open-source projects.
 
-*  Set up your Github: Go to here <https://github.com/>, log in or sign up with your email.
+*  Set up your GitHub: Go here <https://github.com/>, log in or sign up with your email.
 
-*  **Create your repository**: Repository is the project you can create which is on the top left of your Github home page.To creat a new repository, you can click the green button `New`, then name the new repository.Choose Public or Private, and initialize this repository with add a README file. Next Click `Create repository`. The list of repositories is on your Github home page.
+*  **Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository.Choose Public or Private, and initialize this repository with add a README file. Next Click `Create repository`. The list of repositories is on your Github home page.
 
 *  **Use the Github desktop version**, We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
 ![click open with Github Desktop](D:/ZilanWen/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
 
 *  **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
 ![local path](D:/ZilanWen/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
+*  **Clone a repository from other GitHUb accounts**
 
 * **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
 ![local path](D:/ZilanWen/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
 
 
-# Count normalization with DESeq2 
-Created on 17.05.2024  
+# 1 Count normalization 
+Created on 14.05.2024  
 @author: Zilan Wen  
 Email: zilan.wen@helsinki.fi 
 
-For transcriptome study, RNA samples which are isolated from control samples and treatment samples are sent to sequencing company. We will receive fastq files ater RNA sequencing. Then we check the quality of reads in fastq files, align reads to reference genome, and count reads per genes. Then we will get the raw reads count. In this experiment, we isolated RNA samples from Socts pines seedlings with three replicates (`Ha-1`,`Ha-2`, `Ha-3`) which were inoculated with Heterobasidion annosum, a root and stem rot disease pathogen. The seedling control is fungus-free (`Ctr-1`, `Ctr-2`, `Ctr-3`). Since genome of Scots pine is not available, we algin reads to Pinus taeda genome which can be found in plantgenie <https://plantgenie.org/>.
-
-In this tutorial you start with raw reads count ´.txt´ files, and understand why we need to normalize the raw reads counts, learn how to normalize counts using DESeq2.The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
+## 1.1 Normalization Overview
+The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
 
 The main factors often considered during normalization are:
 
-*  sequencing length
+*  sequencing depth or coverage. $Coverage = total bases of all mapped reads/bases of reference$, $sequence depth = total reads number$ 
 
 *  Gene length
 
 *  RNA composition
+These three factors have been described very well here <https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md>
 
+### 1.1.1 Common normalization methods
+
+*  `CPM` *counts per million*counts scaled by total number of reads.
+
+*  `TPM`*transcripts per kilobase million*counts per length of transcript (kb) per million reads mapped.
+
+*  `RPKM` OR `RKPM` *reads/fragments per kilobase of exon per million reads / fragments mapped*similar to TPM.
+`DESeq2's median of ratios`counts divided by sample-specific size factors determined by median ratio of gene counts relative to geometric mean per gene.
+
+
+*  `EdgeR's trimmed mean of M values (TMM)` uses a weighted trimmed mean of the log expression ratios between samples.
+
+
+The differences between RPKM, FPKM and TPM are explained clearly by [SatQuest video]<https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/>
+
+### 1.1.2 DESeq2-normalized counts: Median of ratios method 
+
+This method is explained clearly in [DEG_workshop_salmon]<https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md>
+Since tools for differential expression analysis are comparing the counts between sample groups for the same gene, gene length does not need to be accounted for by the tool. However, `sequencing depth` and `RNA composition` need to be taken into account.
+
+## 1.2 Count normalization of our dataset with DESeq2 
+For transcriptome study, RNA samples which are isolated from control samples and treatment samples are sent to sequencing company. We will receive fastq files ater RNA sequencing. Then we check the quality of reads in fastq files, align reads to reference genome, and count reads per genes. Then we will get the raw reads count. In this experiment, we isolated RNA samples from Socts pines seedlings with three replicates (`Ha-1`,`Ha-2`, `Ha-3`) which were inoculated with Heterobasidion annosum, a root and stem rot disease pathogen. The seedling control is fungus-free (`Ctr-1`, `Ctr-2`, `Ctr-3`). Since genome of Scots pine is not available, we align reads to *Pinus taeda* genome which can be found in plantgenie <https://plantgenie.org/>.
+
+In this tutorial you start with raw reads count ´.txt´ files, and understand why we need to normalize the raw reads counts, learn how to normalize counts using DESeq2.
 
 
 Install `DESeq2` package
