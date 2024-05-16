@@ -10,7 +10,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### 1 Install R package, RStudio, GitHub
+# 1 Install R package, RStudio, GitHub
 
 *  R and RStudio
 
@@ -41,10 +41,9 @@ GitHub is an online software development platform. It's used for storing, tracki
 ![local path](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
 
 *  **Clone a repository from other GitHUb accounts**
+Forking a repository can make a copy of a repository from other account to your account.\
 
-
- 
-
+![local path](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
 
 # 2 Count normalization 
 Created on 14.05.2024  
@@ -66,7 +65,7 @@ The main factors often considered during normalization are:
 
 These three factors have been described very well in [DEG workshop Salmon] (https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 
-### 2.1.1 Common normalization methods
+# 2.1.1 Common normalization methods
 
 *  `CPM` *counts per million*  counts scaled by total number of reads.
 
@@ -81,7 +80,7 @@ These three factors have been described very well in [DEG workshop Salmon] (http
 
 The differences between RPKM, FPKM and TPM are explained clearly by [SatQuest video](https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/)
 
-### 2.1.2 DESeq2-normalized counts: Median of ratios method 
+# 2.1.2 DESeq2-normalized counts: Median of ratios method 
 
 This method is explained clearly in [DEG_workshop_salmon](https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 Since tools for differential expression analysis are comparing the counts between sample groups for the same gene, gene length does not need to be accounted for by the tool. However, `sequencing depth` and `RNA composition` need to be taken into account.
@@ -131,6 +130,7 @@ Here the file description called `fileDesc` is already build and save in `data` 
 Set to the current work directory
 ```{r}
 setwd('C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis')
+
 ```
 Now we start to read raw data
 ```{r}
@@ -215,9 +215,10 @@ normalized_counts <- counts(dds, normalized=TRUE)
 ```
 
 
-Save the `normalized_counts`into results
+Save the `normalized_counts`into results to your local path.
 ```{r,eval=FALSE}
 write.csv(normalized_counts, file="./results/coinfection_normalized_counts_DESeq2.csv")
 ```
 
+# 3 Principal Component Analysis (PCA) 
 
