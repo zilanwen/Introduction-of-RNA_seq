@@ -3,3 +3,4 @@ RN-seq is utilized to screen a set of genes which are expressed at significantly
 * Count normalization
 * Sample-level quality analysis using Principal Component Analysis (PCA) and hietarchical clustering methods
 * Gene differential expression analysis with EdgR 
+You can find the work on this web page:https://zilanwen.github.io/RNA-Seq-Differential_Gene_Expression/
