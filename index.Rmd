@@ -14,7 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 1.1  Install R and RStudio
 
-Install R and install RStudio <https://posit.co/download/rstudio-desktop/> based on your operating system,  available for Linux, MacOS, and Windows 
+Install R and install RStudio on your own laptop or owned computer <https://posit.co/download/rstudio-desktop/> based on your operating system,  available for Linux, MacOS, and Windows 
+Install R and install RStudio on the University computers: go to Start manu --> Software Center --> search for RStudio, and R for Windows. The current version of R in the computers here is 4.3.2
 
 ## 1.2  Differential expression analysis (DEA) work directory setting up
 
