@@ -4,6 +4,10 @@ author: "Zilan Wen"
 date: "2024-05-13"
 output:
   html_document: default
+  theme: readable
+  toc: true
+  toc_depth: 4
+  code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -20,9 +24,15 @@ Install R and install RStudio on the University computers: go to Start manu --> 
 ## 1.2  Differential expression analysis (DEA) work directory setting up
 
 Open up RStudio and setting up a new project for DEA analysis
-1.Go to the `File` menu and select `New Project`.2.In the `New Project` window, choose `New Directory`. Then, choose `New Project`. Name your new directory `RNA_seq_DEA` and then "Create the project as subdirectory of:" the Desktop or `OneDrive - University of Helsinki` (or location of your choice).3.The new project should automatically open in RStudio.\
 
-![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}
+1.Go to the `File` menu and select `New Project`.
+
+2.In the `New Project` window, choose `New Directory`. Then, choose `New Project`. Name your new directory `RNA_seq_DEA` and then "Create the project as subdirectory of:" the Desktop or `OneDrive - University of Helsinki` (or location of your choice).
+
+3.The new project should automatically open in RStudio.\
+
+![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}\
+
 To check whether or not you are in the correct working directory, use getwd(). The path Desktop/RNA_seq_DEA should be returned to you in the console.
 ```{r}
 getwd()
@@ -66,12 +76,12 @@ GitHub is an online software development platform. It's used for storing, tracki
 ![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
 * **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
-![local path](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
+![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
 
 *  **Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
 
-![local path](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
+![3](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
 
 # 2 Count normalization 
 Created on 14.05.2024  
@@ -85,7 +95,7 @@ The main factors often considered during normalization are:
 
 *  sequencing depth or coverage.
 
-![local path](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github4.png){width=50%}
+![4](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github4.png){width=50%}
 
 *  Gene length
 
@@ -417,7 +427,7 @@ infection.targets
 ```
 read and merges a set of text files containing gene expression counts, it makes a DGEList object directly
 ```{r}
-infection <- readDGE(Coinfection.targets, header=F)
+infection <- readDGE(infection.targets, header=F)
 ```
 Check the dimension of DGElist R object
 ```{r}
@@ -501,7 +511,7 @@ rownames(Infection.design)<-colnames(Infection$counts)
 Infection.design
 
 ```
-to see if some samples are outliner
+to see if some samples are outliner. An MDS plot shows the relative similarities of the six samples.
 ```{r}
 plotMDS(Infection, main="MDS plot of RNA-Seq", labels=colnames(Infection$counts))
 
@@ -536,11 +546,90 @@ plotMeanVar(Infection, show.tagwise.vars=T,NBline=T)
 ```{r}
 plotBCV(Infection)
 ```
+The square root of dispersion is the coefficient of biological variation (BCV). The common
+BCV is on the high side, considering that this is a designed experiment using genetically
+identical plants. The trended dispersion shows a decreasing trend with expression level. At low logCPM, the dispersions are very large indeed.
 
+Fit DGEList and design matrix to genewise GLM
 ```{r}
+Infection.fit <- glmFit(Infection, Infection.design)
+colnames(Infection.fit)
+```
+Likelihood test for genes respond differently between different conditions, table of top differentially expressed tags, n specify n tags to display
+```{r}
+lrt.Ha_vs_Ctr <- glmLRT(Infection.fit, coef=2)  # to compare Ha vs Ctr (Ha_vs_Ctr)
 
 ```
 
 ```{r}
+t1<-topTags(lrt.Ha_vs_Ctr, n=nrow(Infection))
+head(t1$table)
+```
+Total number of differentially expressed (DE) genes in different comparsion at FDR < 0.05
+```{r}
+summary(decideTests(lrt.Ha_vs_Ctr, adjust.method="BH", p.value=0.05))
 
 ```
+The UP-regulated genes (can change logFC to be more strict)
+
+```{r}
+nrow(subset(topTags(lrt.Ha_vs_Ctr, n=586)$table,  logFC > 0))
+```
+```{r}
+lrt.Ha_vs_Ctr_UP <- subset(topTags(lrt.Ha_vs_Ctr, n=586)$table, logFC > 0)
+```
+
+
+The DW-regulated genes (can change logFC to be more strict)
+
+```{r}
+nrow(subset(topTags(lrt.Ha_vs_Ctr, n=586)$table,  logFC < 0))
+
+```
+```{r}
+
+lrt.Ha_vs_Ctr_DW <- subset(topTags(lrt.Ha_vs_Ctr, n=586)$table, logFC < 0)
+```
+
+Differentially expressed transcripts' tag
+```{r}
+DEtags.lrt.Ha_vs_Ctr <- rownames(Infection)[as.logical(decideTests(lrt.Ha_vs_Ctr, adjust.method="BH", p.value=0.05))]
+```
+Export list of UP-regulated and DW-regulated transcripts
+
+```{r,eval=FALSE}
+write.csv(lrt.Ha_vs_Ctr_UP, file="./results/lrt.Ha_vs_Ctr_UP.csv")
+write.csv(lrt.Ha_vs_Ctr_DW, file="./results/lrt.Ha_vs_Ctr_DW.csv")
+```
+To ask all the genes label as grey color
+```{r}
+Infection.colHavsCtr = rep('grey55', nrow(Infection))
+
+```
+To assign colour for DE transcripts
+```{r}
+Infection.colHavsCtr[lrt.Ha_vs_Ctr$table$PValue < 0.05 & lrt.Ha_vs_Ctr$table$logFC >0 ] <- "red"
+Infection.colHavsCtr[lrt.Ha_vs_Ctr$table$PValue < 0.05 & lrt.Ha_vs_Ctr$table$logFC <0 ] <- "blue"
+```
+Plot Smear plot with adjustment on Y-axis label
+```{r}
+par(omi=c(0.1,0.1,0.1,0.1), las=1, cex=0.5, mgp=c(3,1,0), cex.main=1.8, cex.lab=1.4, cex.axis=1.4)
+plotSmear(lrt.Ha_vs_Ctr, de.tags=DEtags.lrt.Ha_vs_Ctr, xlab="log-counts per million (logCPM)", ylab="log2-fold change (log2FC)", main="Ha infection compared to Control", pch=19, cex=0.4, smearWidth=0.5, panel.first=grid(), smooth.scatter=FALSE, ylim=c(-7,7), yaxs="i")
+abline(h=c(-1,1),col="dodgerblue")
+```
+Plot Smear plot with adjustment on Y-axis label and colour of DE tags changed
+```{r}
+par(omi=c(0.1,0.1,0.1,0.1), las=1, cex=0.5, mgp=c(3,1,0), cex.main=1.8, cex.lab=1.4, cex.axis=1.4)
+plotSmear(lrt.Ha_vs_Ctr, xlab="log-counts per million (logCPM)", ylab="log2-fold change (log2FC)", main="a infection compared to Control", smearWidth=0.5, pch=21, cex=0.4, deCol="red", col=Infection.colHavsCtr, ylim=c(-7,7), yaxs="i")
+abline(h=c(-1,1),col="dodgerblue")
+```
+
+Plot Smear plot with adjustment on Y-axis label and colour of DE tags changed and export as png
+```{r,eval=FALSE}
+png("./results/plotSmear.InfectionRNAseq.png", res=300, height=1800, width=1800)
+par(omi=c(0.1,0.1,0.1,0.1), las=1, cex=0.5, mgp=c(3,1,0), cex.main=1.8, cex.lab=1.4, cex.axis=1.4)
+plotSmear(lrt.Ha_vs_Ctr, xlab="log-counts per million (logCPM)", ylab="log2-fold change (log2FC)", main="Ha infection compared to Control", smearWidth=0.5, pch=21, cex=0.4, deCol="red", col=Infection.colHavsCtr, ylim=c(-7,7), yaxs="i")
+abline(h=c(-1,1),col="dodgerblue")
+dev.off()
+```
+
