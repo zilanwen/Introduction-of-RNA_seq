@@ -8,6 +8,7 @@ output:
   toc: true
   toc_depth: 4
   code_folding: hide
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -276,7 +277,7 @@ write.csv(normalized_counts, file="./results/coinfection_normalized_counts_DESeq
 
 ## 3.1 Principal Component Analysis (PCA)
 
-### 3.1.1 PCA overview** 
+### 3.1.1 PCA overview
 
 A useful initial step in an RNA-seq analysis is often to assess overall similarity between samples:
 
@@ -437,7 +438,33 @@ head(infection)
 Get the raw mapped count before filtering
 ```{r}
 infection.rawCount <- infection$count
+head(infection.rawCount)
 ```
+```{r,eval=FALSE}
+install.packages("ggplot2")
+```
+
+```{r}
+library(ggplot2)
+```
+To get an idea about how RNA-seq counts are distributed, let's plot a histogram of the counts for a single sample, 'Ha1':
+```{r}
+ggplot(infection.rawCount) +
+  geom_histogram(aes(x = Ha1), stat = "bin", bins = 200) +
+  xlab("Raw expression counts") +
+  ylab("Number of genes")
+```
+  
+Export the .png file
+```{r,,eval=FALSE}
+png("./results/count distribution.png", res=300, height=1800, width=1800)
+ggplot(infection.rawCount) +
+  geom_histogram(aes(x = Ha1), stat = "bin", bins = 200) +
+  xlab("Raw expression counts") +
+  ylab("Number of genes")
+dev.off()
+```
+
 Export raw count table into results folder
 ```{r,eval=FALSE}
 write.csv(infection.rawCount, file="./results/infection.rawCounts.csv")
@@ -632,4 +659,6 @@ plotSmear(lrt.Ha_vs_Ctr, xlab="log-counts per million (logCPM)", ylab="log2-fold
 abline(h=c(-1,1),col="dodgerblue")
 dev.off()
 ```
+
+
 
