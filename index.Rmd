@@ -61,6 +61,8 @@ Now we need to download the files from `Moodle` and the data list which looks li
 Then we go to the File menu and select New File, then select R Script. This should open up a script editor in the top left hand corner. This is where we will be typing and saving all commands required for this analysis. 
 Now save the file as DEA_script.R. When finished your working directory should now look similar to this:\
 ![directories](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/dir.png)
+`
+
 `data` for the original data, `results` for generated files and figures.
 
 # 2 GitHub
@@ -70,67 +72,141 @@ GitHub is an online software development platform. It's used for storing, tracki
 **Set up your GitHub**: Go here <https://github.com/>, log in or sign up with your email.
 
 
-**Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository. Here please go to **2.1** to follow the instruction to  type a name for your repository `username.github.io`, so that you can create a github page latter.
+**Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository. Here please go to **2.1** to follow the instruction to  type a name for your repository `username.github.io`, so that you can create a github page later.
 
 
 **Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
 
-![3](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
+![fork](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
+
 ## 2.1  How to create a Github pages site?
 
 The instruction about [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
-*  1. If you want to create a site in an existing repository
+* 1. If you want to create a site in an existing repository
 In the upper-right corner of any page, select ´+´, then click `New repository`.
-![4](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
-*  2. Use the `Owner` dropdown menu to select the account you want to own the repository.
+![createNewrepp](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
+* 2. Use the `Owner` dropdown menu to select the account you want to own the repository.
 
-*  3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
+* 3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
 
-See the picture below \
+See the picture below: \
 
-![5](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
+![user](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
 
 * 4. click **Public** --> choose **Add a README file** --> click **Create repository**
 
 * 5 Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
 
     But you can't find the site now, It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.  \
-![8](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
+![nopageyet](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
 
-*  6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
+* 6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
 
 
-*  7 **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
+* 7 **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
 ![click open with Github Desktop](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
 
 
-*  8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
-![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
+* 8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
+![connect](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
-*  9 **Upload `data`, `results` files in the local path of your repository** 
+* 9 **Upload `data`, `results` files in the local path of your repository** 
 
-*  10 **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
-![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
+* 10 **Push local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+![push](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=80%}
 
-*  10 **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
+* 11 **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
 
-![9](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
-
-
-
-*  If you want to create a site in an existing repository
+![pagevisible](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
 
 
 
+    *If you want to create a site in an existing repository, you can rename the respositoty as `username.github.io`*
 
-# 2 Count normalization 
+* 12. The page generated by knit to HTML is not visible If we click to visit site, it would be like this:
+
+![pagecontent](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github10.png){width=15%}
+
+* 13. **Upload the .rmd file and the .html file into GitHub local path**, rename the files as index.rmd, index.html, push to github cloud. In order to make the knit function well, please change the path-related code into the right local github path in your .rmd file. After a while, you will get the right contents. When click the visiting site, now it shows like the picture below: 
+![content](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github11.png)
+
+# 3 Assignment
+
+You maybe have a few of questions about the RNA-Seq tutorial assignment,
+
+* Is R markdown documents the preferred format? 
+
+* Is there also an option to turn in the R scripts and associated plots?
+
+* What is the expected contents of results to be included in the submission?
+
+* Are we supposed to include both the code and the results that come from running it along with all of the different plots? 
+
+* What is(/are) the thing(s) to be demonstrated when grading this assignment?
+
+* What is the deadline for the submission of this assignment?
+
+
+Q: Is R markdown documents the preferred format?
+
+A: The preferred formats is to push all the files into github cloud as public repository and create a github page site which links to your `knit to html file` from R markdown.  All the files in your repository include `results`, `data`,  R markdown file named `index.rmd`, the html file named `index.html`.\
+![github files](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github12.png){width=70%}
+
+Q: Is there also an option to turn in the R scripts and associated plots?
+
+A: If you don't feel like to github, you can also have the option that  package R scripts `.r` file or R markdown file `.rmd` + results together and sent email to `zilan.wen@helsinki.fi`.
+
+Q: What is the expected contents of results to be included in the submission?
+
+A: The results include:
+
+1. the table of raw counts together named 'infection.rawCounts.csv'.
+
+2. the normalized counts without filter named 'infection.normCPM.csv'
+
+3. Normalized counts after filtered by DESeq2, file named such as 'normalized_counts_DESeq2.csv'
+
+4. Normalized counts by TMM in EdgeR, files named 'Infection.filtered.normCPM.csv'.
+
+5. The up-regulated genes saved in the file named 'lrt.Ha_vs_Ctr_UP.csv'
+
+6. The down-regulated genes saved in the file named 'lrt.Ha_vs_Ctr_DW.csv'
+
+7. show the count distrbution. The file named 'count distribution.png'
+
+8. MDS plot generated from EdgeR, The file named 'plotMDS.Infection.png'
+
+9. plotPCA to show the sample similarity. the file named such as PlotPCA_dds.pdf
+
+10. heatmap to show the sample cluster, the file named such as PlotHeatmap_dds.pdf
+
+11. show the differentially expressed gene in the plots named 'plotSmear.InfectionRNAseq.png'
+
+The results list like below:\
+
+![results list](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github13.png){width=30%}
+
+Q:Are we supposed to include both the code and the results that come from running it along with all of the different plots? 
+
+A: Yes.
+
+Q: What is(/are) the thing(s) to be demonstrated when grading this assignment?
+
+The things to be demonstrated: Learning about the count normalization, sample-level quality control by PCA, selecting differentially expressed genes. Building up the github system is recommended and optional, it is a useful tool which is popular to use in recent years. It can save the whole process in the repository of github cloud, and convenient to recover the knowledge long period time later.
+
+Q: What is the deadline for the submission of this assignment?
+ 
+I suggest to try to finish it on the course on Thursday morning.  if you need more time, we can sure extend one or two weeks if you need.
+
+
+# 4 Count normalization 
 Created on 14.05.2024  
 @author: Zilan Wen  
 Email: zilan.wen@helsinki.fi 
 
-## 2.1 Normalization Overview
+## 4.1 Normalization Overview
 The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
 
 The main factors often considered during normalization are:
@@ -145,7 +221,7 @@ The main factors often considered during normalization are:
 
 These three factors have been described very well in [DEG workshop Salmon] (https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 
-# 2.1.1 Common normalization methods
+# 4.1.1 Common normalization methods
 
 *  `CPM` *counts per million*  counts scaled by total number of reads.
 
@@ -160,12 +236,12 @@ These three factors have been described very well in [DEG workshop Salmon] (http
 
 The differences between RPKM, FPKM and TPM are explained clearly by [SatQuest video](https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/)
 
-# 2.1.2 DESeq2-normalized counts: Median of ratios method 
+# 4.1.2 DESeq2-normalized counts: Median of ratios method 
 
 This method is explained clearly in [DEG_workshop_salmon](https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 Since tools for differential expression analysis are comparing the counts between sample groups for the same gene, gene length does not need to be accounted for by the tool. However, `sequencing depth` and `RNA composition` need to be taken into account.
 
-## 2.2 Count normalization of our dataset with DESeq2 
+## 4.2 Count normalization of our dataset with DESeq2 
 For transcriptome study, RNA samples which are isolated from control samples and treatment samples are sent to sequencing company. The following steps are :
 
 *  RNA-seq with a sequencing depth of 10-30 M reads per library (at least 3 biological replicates per sample)
@@ -198,7 +274,7 @@ In this tutorial we start with raw reads count ´.txt´ files, normalize the cou
 
 *  7. Generate the normalized counts
 
-### 2.2.1 Install packages
+### 4.2.1 Install packages
 
 Install `DESeq2` package
 ```{r,eval=FALSE}
@@ -215,11 +291,11 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("edgeR")
 ```
-### 2.2.2 Build a file description 
+### 4.2.2 Build a file description 
 
 Here the file description called `fileDesc` is already build and save in `data` folder. We will use it for reading a list of seperated files.
 
-### 2.2.3 Read data files
+### 4.2.3 Read data files
 
 Set to the current work directory
 ```{r}
@@ -257,7 +333,7 @@ Coinfection.rawCount <- Coinfection.orig$count
 dim(Coinfection.rawCount)
 head(Coinfection.rawCount)
 ```
-### 2.2.4 Build meta data
+### 4.2.4 Build meta data
 We define `sampletype`: we only have two types of samples, Control and Ha-infection
 ```{r}
 sampletype <- factor(c(rep("Ha",3), rep("Ctr", 3)))
@@ -278,7 +354,7 @@ Check that sample names match in both files
 ```{r}
 all(colnames(Coinfection.orig$count) %in% rownames(meta))
 ```
-### 2.2.5 Create `DESeqDataset` object
+### 4.2.5 Create `DESeqDataset` object
 
 load the package `DESeq2`
 Create DESEq2 dataset `dds`
@@ -291,7 +367,7 @@ If you want to view dds, you can use the code:
 head(counts(dds))
 ```
 
-### 2.2.6 Generate size factors
+### 4.2.6 Generate size factors
 To perform the median of ratios method of normalization, DESeq2 has a single estimateSizeFactors() function that will generate size factors.
 ```{r}
 dds <- estimateSizeFactors(dds)
@@ -302,7 +378,7 @@ sizeFactors(dds)
 ```
 
 
-### 2.2.7 Generate the normalized counts
+### 4.2.7 Generate the normalized counts
 Now, to retrieve the normalized counts matrix from dds, we use the counts() function and add the argument normalized=TRUE.
 ```{r}
 normalized_counts <- counts(dds, normalized=TRUE)
@@ -314,11 +390,11 @@ Save the `normalized_counts`into results to your local path.
 write.csv(normalized_counts, file="./results/coinfection_normalized_counts_DESeq2.csv")
 ```
 
-# 3 Sample-level quality Control
+# 5 Sample-level quality Control
 
-## 3.1 Principal Component Analysis (PCA)
+## 5.1 Principal Component Analysis (PCA)
 
-### 3.1.1 PCA overview
+### 5.1.1 PCA overview
 
 A useful initial step in an RNA-seq analysis is often to assess overall similarity between samples:
 
@@ -334,7 +410,7 @@ These unsupervised clustering methods are run using log2 transformed normalized 
 
 For more details, please go to [DEG workshop Salmon](https://github.com/zilanwen/DGE_workshop_salmon_online/blob/master/lessons/03_DGE_QC_analysis.md)
 
-### 3.1.2 Using our dataset for PCA
+### 5.1.2 Using our dataset for PCA
 
 *  **Transform normalized counts for the dataset**
 
@@ -371,7 +447,7 @@ dev.off()
 
 *  3. What do you think the %variance information (in the axes titles) tell you about the data in the context of the PCA?
 
-## 3.2 Hierarchical Clustering Heatmap
+## 5.2 Hierarchical Clustering Heatmap
 
 Similar to PCA, hierarchical clustering is another, complementary, method for identifying strong patterns in a dataset and potential outliers. The heatmap displays the **correlation of gene expression for all pairwise combinations of samples** in the dataset. Since the majority of genes are not differentially expressed, samples generally have high correlations with each other (values higher than 0.80). Samples below 0.80 may indicate an outlier in your data and/or sample contamination.
 
@@ -427,7 +503,7 @@ pheatmap(rld_cor, annotation = meta, color = heat.colors, border_color=NA, fonts
   		fontsize_row = 10, height=20)
 ```
 
-# 4 Differential expression analysis (DEA) using EdgeR
+# 6 Differential expression analysis (DEA) using EdgeR
 
 Differential expression analysis can be carried out using DESeq2 or using EdgeR. The DESeq2 methods has been describes in [DGE workshop Salmon](https://github.com/hbctraining/DGE_workshop_salmon_online/blob/master/lessons/04a_design_formulas.md). Here we will learn to use another method -- EdgeR
 
