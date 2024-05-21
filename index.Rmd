@@ -70,10 +70,10 @@ GitHub is an online software development platform. It's used for storing, tracki
 **Set up your GitHub**: Go here <https://github.com/>, log in or sign up with your email.
 
 
-*  **Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository. Here please go to **1.3.1** to follow the instruction to  type a name for your repository `username.github.io`, so that you can create a github page latter.
+**Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository. Here please go to **2.1** to follow the instruction to  type a name for your repository `username.github.io`, so that you can create a github page latter.
 
 
-*  **Clone a repository from other GitHUb accounts**
+**Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
 
 ![3](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
@@ -82,22 +82,23 @@ Forking a repository can make a copy of a repository from other account to your 
 The instruction about [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
 *  1. If you want to create a site in an existing repository
-In the upper-right corner of any page, select ´+´, then click New repository.
+In the upper-right corner of any page, select ´+´, then click `New repository`.
 ![4](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
 *  2. Use the `Owner` dropdown menu to select the account you want to own the repository.
 
 *  3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
 
-* 4. click '*Public** --> choose **Add a README file** --> click **Create repository**
-
 See the picture below \
 
 ![5](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
 
+* 4. click **Public** --> choose **Add a README file** --> click **Create repository**
+
 * 5 Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
 
-But you can't find the site now, It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.  \
+    But you can't find the site now, It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.  \
 ![8](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
+
 *  6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
 
 
@@ -108,13 +109,14 @@ But you can't find the site now, It can take up to 10 minutes for changes to you
 *  8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
 ![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
-*  9 upload data, results files in the local path of your repository, 
+*  9 **Upload `data`, `results` files in the local path of your repository** 
 
-*  10**upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+*  10 **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
 ![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
-*  10 Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
 
-![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
+*  10 **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
+
+![9](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
 
 
 
