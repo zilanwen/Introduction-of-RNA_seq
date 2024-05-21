@@ -15,7 +15,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# 1 Install R package, RStudio, directory set-up, GitHub
+# 1 Install R package, RStudio, directory set-up
 
 ## 1.1  Install R and RStudio
 
@@ -63,25 +63,21 @@ Now save the file as DEA_script.R. When finished your working directory should n
 ![directories](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/dir.png)
 `data` for the original data, `results` for generated files and figures.
 
-## 1.3 GitHub
+# 2 GitHub
 
 GitHub is an online software development platform. It's used for storing, tracking, and collaborating on software projects. It makes it easy for developers to share code files and collaborate with fellow developers on open-source projects.
 
-*  **Set up your GitHub**: Go here <https://github.com/>, log in or sign up with your email.
+**Set up your GitHub**: Go here <https://github.com/>, log in or sign up with your email.
+
 
 *  **Create your repository**: Repository is the project you can create which is on the top left of your GitHub home page.To create a new repository, you can click the green button `New`, then name the new repository. Here please go to **1.3.1** to follow the instruction to  type a name for your repository `username.github.io`, so that you can create a github page latter.
 
-
-
-
-* **upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
-![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
 
 *  **Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
 
 ![3](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
-###1.3.1  How to create a Github pages site?
+## 2.1  How to create a Github pages site?
 
 The instruction about [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
@@ -96,19 +92,29 @@ In the upper-right corner of any page, select ´+´, then click New repository.
 
 See the picture below \
 
-![5](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png)
+![5](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
 
 * 5 Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
 
 But you can't find the site now, It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.  \
-![8](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png)
-*  **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
+![8](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
+*  6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
+
+
+*  7 **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
 ![click open with Github Desktop](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
 
 
-*  **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
+*  8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
 ![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
+*  9 upload data, results files in the local path of your repository, 
+
+*  10**upload local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=50%}
+*  10 Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
+
+![2](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
 
 
 
