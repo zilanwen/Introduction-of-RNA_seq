@@ -82,9 +82,9 @@ Forking a repository can make a copy of a repository from other account to your 
 
 ## 2.1  How to create a Github pages site?
 
-The instruction about [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
+The instruction of [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
-* 1. If you want to create a site in an existing repository
+* 1. If you want to create a site in a new repository
 In the upper-right corner of any page, select ´+´, then click `New repository`.
 ![createNewrepp](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
 * 2. Use the `Owner` dropdown menu to select the account you want to own the repository.
