@@ -1,13 +1,7 @@
 files	inoculation	description
-./Ha1.txt	Ha	H.annosum infection
-./Ha2.txt	Ha	H.annosum infection
-./Ha3.txt	Ha	H.annosum infection
-./Sl1.txt	Sl	Suillus luteus inoculation
-./Sl2.txt	Sl	Suillus luteus inoculation
-./Sl3.txt	Sl	Suillus luteus inoculation
-./SlHa1.txt	SlHa	coinfection
-./SlHa2.txt	SlHa	coinfection
-./SlHa3.txt	SlHa	coinfection
-./Ctr1.txt	Ctr	Control
-./Ctr2.txt	Ctr	Control
-./Ctr3.txt	Ctr	Control
+./data/Ha1.txt	Ha	H.annosum infection
+./data/Ha2.txt	Ha	H.annosum infection
+./data/Ha3.txt	Ha	H.annosum infection
+./data/Ctr1.txt	Ctr	Control
+./data/Ctr2.txt	Ctr	Control
+./data/Ctr3.txt	Ctr	Control

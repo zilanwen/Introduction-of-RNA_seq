@@ -30,11 +30,11 @@ Open up RStudio and setting up a new project for DEA analysis
 
 1.Go to the `File` menu and select `New Project`.
 
-2.In the `New Project` window, choose `New Directory`. Then, choose `New Project`. Name your new directory `RNA_seq_DEA` and then "Create the project as subdirectory of:" the Desktop or `OneDrive - University of Helsinki` (or location of your choice).
+2.In the `New Project` window, choose `New Directory`. Then, choose `New Project`. Name your new directory `RNA_seq_DEA` and then Create the project as subdirectory of:`the Desktop` or `OneDrive - University of Helsinki` (or location of your choice).
 
 3.The new project should automatically open in RStudio.\
 
-![1](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}\
+![1](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=80%}\
 
 To check whether or not you are in the correct working directory, use getwd(). The path Desktop/RNA_seq_DEA should be returned to you in the console.
 
@@ -55,16 +55,17 @@ setwd("C:/Users/username/Desktop/RNA-seq_DEA")
 
 Check the current R version. The current R version is R-4.5.0 
 ```{r,eval=FALSE} 
-R.Version()#the code in the code chunk will not be run.
+R.Version()
 ```
 Within your working directory use the New folder button in the bottom right panel to create two new directories `data` and `results`.
 
 Now we need to download the files from `Moodle` and the data list which looks like below\
 ![data](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/data.png){width=15%}
+
 Then we go to the File menu and select New File, then select **R markdown**. This should open up a script editor in the top left hand corner. This is where we will be typing and saving all commands required for this analysis. 
 Now save the file as DEA_script.R. When finished your working directory should now look similar to this:\
 ![directories](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/dir.png)
-`
+
 
 `data` for the original data, `results` for generated files and figures.
 
@@ -80,59 +81,57 @@ GitHub is an online software development platform. It's used for storing, tracki
 
 **Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
-
 ![fork](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
 
 ## How to create a Github pages site?
 
 The instruction of [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
-* 1. If you want to create a site in a new repository
-In the upper-right corner of any page, select ´+´, then click `New repository`.
+1. If you want to create a site in a new repository.
+
+  - In the upper-right corner of any page, select ´+´, then click `New repository`.\
 ![createNewrepp](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
-* 2. Use the `Owner` dropdown menu to select the account you want to own the repository.
 
-* 3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
+2. Use the `Owner` dropdown menu to select the account you want to own the repository.
 
-See the picture below: \
+3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
 
+  - See the picture below: \
 ![user](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
 
-* 4. click **Public** --> choose **Add a README file** --> click **Create repository**
+4. click **Public** --> choose **Add a README file** --> click **Create repository**
 
-* 5 Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
+5. Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
 
-    But you can't find the site now, clear brower cache and reload GitHub. It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub. \
+  - But you can't find the site now, clear brower cache and reload GitHub. It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub. \
 ![nopageyet](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
 
-* 6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
+6. Rename the repository name as **RNA_seq_DEA** in `General` in `Setting`
 
 
-* 7 **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
+7. **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
 ![click open with Github Desktop](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
 
 
-* 8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
+8. **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
 ![connect](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
-* 9 **Upload `data`, `results` files in the local path of your repository** 
+9. **Upload `data`, `results` files in the local path of your repository** 
 
-* 10 **Push local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.After change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+10. **Push local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.After change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
 ![push](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=80%}
 
-* 11 **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
-
+11. **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page.\
 ![pagevisible](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
 
 
 
-    *If you want to create a site in an existing repository, you can rename the respositoty as `username.github.io`*
+If you want to create a site in an existing repository, you can rename the respositoty as `username.github.io`
 
-* 12. The page generated by knit to HTML is not visible If we click to visit site, it would be like this:
-
+12. The page generated by knit to HTML is not visible If we click to visit site, it would be like this:\
 ![pagecontent](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github10.png){width=15%}
 
-* 13. **Upload the .rmd file and the .html file into GitHub local path**, rename the files as index.rmd, index.html, push to github cloud. In order to make the knit function well, please change the path-related code into the right local github path in your .rmd file. After a while, you will get the right contents. When click the visiting site, now it shows like the picture below: 
+13. **Upload the .rmd file and the .html file into GitHub local path**, rename the files as index.rmd, index.html, push to github cloud. In order to make the knit function well, please change the path-related code into the right local github path in your .rmd file. After a while, you will get the right contents. When click the visiting site, now it shows like the picture below:\
 ![content](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github11.png)
 
 # Assignment
