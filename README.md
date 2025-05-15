@@ -4,4 +4,10 @@ RN-seq is utilized to screen a set of genes which are expressed at significantly
 * Sample-level quality analysis using Principal Component Analysis (PCA) and hietarchical clustering methods
 * Gene differential expression analysis with EdgR 
 
-You can find the work on this web page:https://zilanwen.github.io/Introduction-of-RNA_seq/
+You can find the work on this web page:
+
+https://zilanwen.github.io/Introduction-of-RNA_seq/
+
+You can get all the data we will use for RNA analysis in my GitHub
+
+https://github.com/zilanwen/Introduction-of-RNA_seq. 
