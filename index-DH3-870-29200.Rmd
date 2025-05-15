@@ -1,7 +1,7 @@
 ---
 title: 'Differential Gene Expression Analysis '
 author: "Zilan Wen"
-date: "2025-05-16"
+date: "2024-05-13"
 output:
   html_document: default
   theme: readable
@@ -33,7 +33,7 @@ Open up RStudio and setting up a new project for DEA analysis
 
 3.The new project should automatically open in RStudio.\
 
-![1](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}\
+![1](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}\
 
 To check whether or not you are in the correct working directory, use getwd(). The path Desktop/RNA_seq_DEA should be returned to you in the console.
 ```{r, message=FALSE}
@@ -50,8 +50,8 @@ or use code below:
 setwd("C:/Users/username/Desktop/RNA-seq_DEA")
 ```
 
-Check the current R version. The current R version is R-4.5.0 
-```{r,message=Ture, eval=FALSE} 
+Check the current R version. The current R version is R-4.4.0 
+```{r,eval=FALSE} 
 R.Version()#the code in the code chunk will not be run.
 ```
 Within your working directory use the New folder button in the bottom right panel to create two new directories `data` and `results`.
@@ -82,9 +82,9 @@ Forking a repository can make a copy of a repository from other account to your 
 
 ## 2.1  How to create a Github pages site?
 
-The instruction of [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
+The instruction about [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
-* 1. If you want to create a site in a new repository
+* 1. If you want to create a site in an existing repository
 In the upper-right corner of any page, select ´+´, then click `New repository`.
 ![createNewrepp](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
 * 2. Use the `Owner` dropdown menu to select the account you want to own the repository.
