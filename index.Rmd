@@ -3,27 +3,28 @@ title: 'Differential Gene Expression Analysis '
 author: "Zilan Wen"
 date: "2025-05-16"
 output:
-  html_document: default
-  theme: readable
-  toc: true
-  toc_depth: 4
-  code_folding: hide
-  pdf_document: default
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    toc_float:
+      collapsed: true
+      smooth_scoll: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# 1 Install R package, RStudio, directory set-up
+# Install R package, RStudio, directory set-up
 
-## 1.1  Install R and RStudio
+## Install R and RStudio
 
 Install R and install RStudio on your own laptop or owned computer <https://posit.co/download/rstudio-desktop/> based on your operating system,  available for Linux, MacOS, and Windows
 
 Install R and install RStudio on the University computers: go to Start manu --> Software Center --> search for RStudio, and R for Windows. The current version of R in the computers here is 4.3.2
 
-## 1.2  Differential expression analysis (DEA) work directory setting up
+## Differential expression analysis (DEA) work directory setting up
 
 Open up RStudio and setting up a new project for DEA analysis
 
@@ -67,7 +68,7 @@ Now save the file as DEA_script.R. When finished your working directory should n
 
 `data` for the original data, `results` for generated files and figures.
 
-# 2 GitHub
+# GitHub
 
 GitHub is an online software development platform. It's used for storing, tracking, and collaborating on software projects. It makes it easy for developers to share code files and collaborate with fellow developers on open-source projects.
 
@@ -82,7 +83,7 @@ Forking a repository can make a copy of a repository from other account to your 
 
 ![fork](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
 
-## 2.1  How to create a Github pages site?
+## How to create a Github pages site?
 
 The instruction of [creating a GitHub pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site)
 
@@ -134,7 +135,7 @@ See the picture below: \
 * 13. **Upload the .rmd file and the .html file into GitHub local path**, rename the files as index.rmd, index.html, push to github cloud. In order to make the knit function well, please change the path-related code into the right local github path in your .rmd file. After a while, you will get the right contents. When click the visiting site, now it shows like the picture below: 
 ![content](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github11.png)
 
-# 3 Assignment
+# Assignment
 
 You maybe have a few of questions about the RNA-Seq tutorial assignment,
 
@@ -203,12 +204,12 @@ Q: What is the deadline for the submission of this assignment?
 I suggest to try to finish it on the course on Thursday morning.  if you need more time, we can sure extend one or two weeks if you need.
 
 
-# 4 Count normalization 
+# Count normalization 
 Created on 15.05.2025  
 @author: Zilan Wen  
 Email: zilan.wen@helsinki.fi 
 
-## 4.1 Normalization Overview
+## Normalization Overview
 The first step in the DE analysis workflow is count normalization, which is necessary to make accurate comparisons of gene expression between samples.
 
 The main factors often considered during normalization are:
@@ -223,7 +224,7 @@ The main factors often considered during normalization are:
 
 These three factors have been described very well in [DEG workshop Salmon] (https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 
-# 4.1.1 Common normalization methods
+### Common normalization methods
 
 *  `CPM` *counts per million*  counts scaled by total number of reads.
 
@@ -238,12 +239,12 @@ These three factors have been described very well in [DEG workshop Salmon] (http
 
 The differences between RPKM, FPKM and TPM are explained clearly by [SatQuest video](https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/)
 
-# 4.1.2 DESeq2-normalized counts: Median of ratios method 
+### DESeq2-normalized counts: Median of ratios method 
 
 This method is explained clearly in [DEG_workshop_salmon](https://github.com/hbctraining/DGE_workshop_salmon/blob/master/lessons/02_DGE_count_normalization.md)
 Since tools for differential expression analysis are comparing the counts between sample groups for the same gene, gene length does not need to be accounted for by the tool. However, `sequencing depth` and `RNA composition` need to be taken into account.
 
-## 4.2 Count normalization of our dataset with DESeq2 
+## Count normalization of our dataset with DESeq2 
 For transcriptome study, RNA samples which are isolated from control samples and treatment samples are sent to sequencing company. The following steps are :
 
 *  RNA-seq with a sequencing depth of 10-30 M reads per library (at least 3 biological replicates per sample)
@@ -276,7 +277,7 @@ In this tutorial we start with raw reads count ´.txt´ files, normalize the cou
 
 *  7. Generate the normalized counts
 
-### 4.2.1 Install packages
+### Install packages
 
 Install `DESeq2`and  package`EdgeR`
 ```{r,eval=FALSE}
@@ -288,27 +289,19 @@ BiocManager::install("edgeR",force = TRUE)
 ```
 
 
-
-```
-### 4.2.2 Build a file description 
+### Build a file description 
 
 Here the file description called `fileDesc` is already build and save in `data` folder. We will use it for reading a list of seperated files.
 
-### 4.2.3 Read data files
+### Read data files
 
 Set to the current work directory
-
-```{r}
-
-```
 
 ```{r}
 setwd('C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis')
 ```
 
-
 Now we start to read raw data
-
 ```{r}
 Coinfection.targets<-read.delim("./data/fileDesc.txt")
 ```
@@ -316,9 +309,8 @@ change the rownames of the dataframe `Coinfection.targets`, later on we don't ne
 ```{r}
 rownames(Coinfection.targets)<-c("Ha1","Ha2","Ha3","Ctr1","Ctr2","Ctr3")
 ```
-load the packege `edgeR`
-
-```{r}
+load the packege `edgeR`and `DESeq2`
+```{r, message=FALSE}
 library(edgeR)
 library(DESeq2)
 ```
@@ -342,7 +334,7 @@ Coinfection.rawCount <- Coinfection.orig$count
 dim(Coinfection.rawCount)
 head(Coinfection.rawCount)
 ```
-### 4.2.4 Build meta data
+### Build meta data
 We define `sampletype`: we only have two types of samples, Control and Ha-infection
 ```{r}
 sampletype <- factor(c(rep("Ha",3), rep("Ctr", 3)))
@@ -363,7 +355,7 @@ Check that sample names match in both files
 ```{r}
 all(colnames(Coinfection.orig$count) %in% rownames(meta))
 ```
-### 4.2.5 Create `DESeqDataset` object
+### Create `DESeqDataset` object
 
 load the package `DESeq2`
 Create DESEq2 dataset `dds`
@@ -376,7 +368,7 @@ If you want to view dds, you can use the code:
 head(counts(dds))
 ```
 
-### 4.2.6 Generate size factors
+### Generate size factors
 To perform the median of ratios method of normalization, DESeq2 has a single estimateSizeFactors() function that will generate size factors.
 ```{r}
 dds <- estimateSizeFactors(dds)
@@ -387,7 +379,7 @@ sizeFactors(dds)
 ```
 
 
-### 4.2.7 Generate the normalized counts
+### Generate the normalized counts
 Now, to retrieve the normalized counts matrix from dds, we use the counts() function and add the argument normalized=TRUE.
 ```{r}
 normalized_counts <- counts(dds, normalized=TRUE)
@@ -399,11 +391,11 @@ Save the `normalized_counts`into results to your local path.
 write.csv(normalized_counts, file="./results/coinfection_normalized_counts_DESeq2.csv")
 ```
 
-# 5 Sample-level quality Control
+# Sample-level quality Control
 
-## 5.1 Principal Component Analysis (PCA)
+## Principal Component Analysis (PCA)
 
-### 5.1.1 PCA overview
+### PCA overview
 
 A useful initial step in an RNA-seq analysis is often to assess overall similarity between samples:
 
@@ -419,7 +411,7 @@ These unsupervised clustering methods are run using log2 transformed normalized 
 
 For more details, please go to [DEG workshop Salmon](https://github.com/zilanwen/DGE_workshop_salmon_online/blob/master/lessons/03_DGE_QC_analysis.md)
 
-### 5.1.2 Using our dataset for PCA
+### Using our dataset for PCA
 
 *  **Transform normalized counts for the dataset**
 
@@ -456,7 +448,7 @@ dev.off()
 
 *  3. What do you think the %variance information (in the axes titles) tell you about the data in the context of the PCA?
 
-## 5.2 Hierarchical Clustering Heatmap
+## Hierarchical Clustering Heatmap
 
 Similar to PCA, hierarchical clustering is another, complementary, method for identifying strong patterns in a dataset and potential outliers. The heatmap displays the **correlation of gene expression for all pairwise combinations of samples** in the dataset. Since the majority of genes are not differentially expressed, samples generally have high correlations with each other (values higher than 0.80). Samples below 0.80 may indicate an outlier in your data and/or sample contamination.
 
@@ -512,7 +504,7 @@ pheatmap(rld_cor, annotation = meta, color = heat.colors, border_color=NA, fonts
   		fontsize_row = 10, height=20)
 ```
 
-# 6 Differential expression analysis (DEA) using EdgeR
+# Differential expression analysis (DEA) using EdgeR
 
 Differential expression analysis can be carried out using DESeq2 or using EdgeR. The DESeq2 methods has been describes in [DGE workshop Salmon](https://github.com/hbctraining/DGE_workshop_salmon_online/blob/master/lessons/04a_design_formulas.md). Here we will learn to use another method -- EdgeR
 
