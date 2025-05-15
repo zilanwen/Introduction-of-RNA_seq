@@ -36,6 +36,8 @@ Open up RStudio and setting up a new project for DEA analysis
 ![1](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Create_RStudio_Project.gif){width=50%}\
 
 To check whether or not you are in the correct working directory, use getwd(). The path Desktop/RNA_seq_DEA should be returned to you in the console.
+
+
 ```{r, message=FALSE}
 getwd()
 ```
@@ -51,16 +53,16 @@ setwd("C:/Users/username/Desktop/RNA-seq_DEA")
 ```
 
 Check the current R version. The current R version is R-4.5.0 
-```{r,message=Ture, eval=FALSE} 
+```{r,eval=FALSE} 
 R.Version()#the code in the code chunk will not be run.
 ```
 Within your working directory use the New folder button in the bottom right panel to create two new directories `data` and `results`.
 
 Now we need to download the files from `Moodle` and the data list which looks like below\
-![data](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/data.png){width=15%}
-Then we go to the File menu and select New File, then select R Script. This should open up a script editor in the top left hand corner. This is where we will be typing and saving all commands required for this analysis. 
+![data](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/data.png){width=15%}
+Then we go to the File menu and select New File, then select **R markdown**. This should open up a script editor in the top left hand corner. This is where we will be typing and saving all commands required for this analysis. 
 Now save the file as DEA_script.R. When finished your working directory should now look similar to this:\
-![directories](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/dir.png)
+![directories](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/dir.png)
 `
 
 `data` for the original data, `results` for generated files and figures.
@@ -78,7 +80,7 @@ GitHub is an online software development platform. It's used for storing, tracki
 **Clone a repository from other GitHUb accounts**
 Forking a repository can make a copy of a repository from other account to your account.\
 
-![fork](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
+![fork](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github5.png){width=50%}
 
 ## 2.1  How to create a Github pages site?
 
@@ -86,40 +88,40 @@ The instruction of [creating a GitHub pages site](https://docs.github.com/en/pag
 
 * 1. If you want to create a site in a new repository
 In the upper-right corner of any page, select ´+´, then click `New repository`.
-![createNewrepp](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
+![createNewrepp](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github6.png){width=50%}
 * 2. Use the `Owner` dropdown menu to select the account you want to own the repository.
 
 * 3. Type a name for your repository and an optional description. If you're creating a user or organization site, your repository must be named `<user>.github.io` or `<organization>.github.io`. If your user or organization name contains uppercase letters, you must lowercase the letters.
 
 See the picture below: \
 
-![user](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
+![user](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github7.png){width=50%}
 
 * 4. click **Public** --> choose **Add a README file** --> click **Create repository**
 
 * 5 Under your repository name, click  `Settings`--> click `Pages` in the "Code and automation" section --> Click `Visit site ` to see your publish site
 
-    But you can't find the site now, It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.  \
-![nopageyet](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
+    But you can't find the site now, clear brower cache and reload GitHub. It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub. \
+![nopageyet](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github8.png){width=50%}
 
 * 6 Rename the repository name as **RNA_seq_DEA** in `General in `Setting`
 
 
 * 7 **Use the Github desktop version**: We are going to download and upload by commiting changes from our local files to the cloud. Go to GitHub Desktop<https://desktop.github.com/>, download based on your operating system. Then go to sign in with your GitHub account.Go back to your GitHUb repository, and click open with Github Desktop\
-![click open with Github Desktop](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
+![click open with Github Desktop](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github1.png){width=50%}
 
 
 * 8 **Clone a repository and connect repository to local files**  In local path, choose where we want to save the repository in our local computer.click `Clone`. Now we have cloned the repository that we created on GitHub and we have connected it to the GitHub desktop application.\
-![connect](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
+![connect](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github2.png){width=50%}
 
 * 9 **Upload `data`, `results` files in the local path of your repository** 
 
-* 10 **Push local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.Atfter change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
-![push](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=80%}
+* 10 **Push local files to GitHub cloud** Any changes and updated files can be uploaded to GitHUb cloud though GitHub Desktop.After change files, go back to GitHub Desktop and navigate the corresponding repository, you will have the changes listed on the top left. We now give the change a title such as '11' in the`summary (required)`box and click `Commit to main` on the bottom left, Then on the right, we can push comments to the origin remote by clicking `Push origin`.\
+![push](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github3.png){width=80%}
 
 * 11 **Github page link could be visible now**. Go to GitHub  website --> the setting --> Pages. You can now find the link of the Github page
 
-![pagevisible](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
+![pagevisible](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github9.png){width=50%}
 
 
 
@@ -127,10 +129,10 @@ See the picture below: \
 
 * 12. The page generated by knit to HTML is not visible If we click to visit site, it would be like this:
 
-![pagecontent](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github10.png){width=15%}
+![pagecontent](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github10.png){width=15%}
 
 * 13. **Upload the .rmd file and the .html file into GitHub local path**, rename the files as index.rmd, index.html, push to github cloud. In order to make the knit function well, please change the path-related code into the right local github path in your .rmd file. After a while, you will get the right contents. When click the visiting site, now it shows like the picture below: 
-![content](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github11.png)
+![content](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github11.png)
 
 # 3 Assignment
 
@@ -152,7 +154,7 @@ You maybe have a few of questions about the RNA-Seq tutorial assignment,
 Q: Is R markdown documents the preferred format?
 
 A: The preferred formats is to push all the files into github cloud as public repository and create a github page site which links to your `knit to html file` from R markdown.  All the files in your repository include `results`, `data`,  R markdown file named `index.rmd`, the html file named `index.html`.\
-![github files](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github12.png){width=70%}
+![github files](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github12.png){width=70%}
 
 Q: Is there also an option to turn in the R scripts and associated plots?
 
@@ -186,7 +188,7 @@ A: The results include:
 
 The results list like below:\
 
-![results list](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github13.png){width=30%}
+![results list](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github13.png){width=30%}
 
 Q:Are we supposed to include both the code and the results that come from running it along with all of the different plots? 
 
@@ -202,7 +204,7 @@ I suggest to try to finish it on the course on Thursday morning.  if you need mo
 
 
 # 4 Count normalization 
-Created on 14.05.2024  
+Created on 15.05.2025  
 @author: Zilan Wen  
 Email: zilan.wen@helsinki.fi 
 
@@ -213,7 +215,7 @@ The main factors often considered during normalization are:
 
 *  sequencing depth or coverage.
 
-![4](C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github4.png){width=50%}
+![4](C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis/image/Github4.png){width=50%}
 
 *  Gene length
 
@@ -276,20 +278,17 @@ In this tutorial we start with raw reads count ´.txt´ files, normalize the cou
 
 ### 4.2.1 Install packages
 
-Install `DESeq2` package
+Install `DESeq2`and  package`EdgeR`
 ```{r,eval=FALSE}
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install("DESeq2")
+BiocManager::install("DESeq2",force = TRUE)
+BiocManager::install("edgeR",force = TRUE)
 ```
 
-We need to install `EdgeR` package because we need the readDGE function here.
-```{r,eval=FALSE}
-if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
 
-BiocManager::install("edgeR")
+
 ```
 ### 4.2.2 Build a file description 
 
@@ -298,23 +297,33 @@ Here the file description called `fileDesc` is already build and save in `data` 
 ### 4.2.3 Read data files
 
 Set to the current work directory
+
 ```{r}
-setwd('C:/Users/timoi/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis')
 
 ```
+
+```{r}
+setwd('C:/Users/Zilan/OneDrive - University of Helsinki/ZilanWen Github/RNA-seq_Differential-Gene-Expression-Analysis')
+```
+
+
 Now we start to read raw data
+
 ```{r}
 Coinfection.targets<-read.delim("./data/fileDesc.txt")
 ```
-change the rawnames of the dataframe `Coinfection.targets`, later on we don't need to rename column names.
+change the rownames of the dataframe `Coinfection.targets`, later on we don't need to rename column names.
 ```{r}
 rownames(Coinfection.targets)<-c("Ha1","Ha2","Ha3","Ctr1","Ctr2","Ctr3")
 ```
 load the packege `edgeR`
+
 ```{r}
 library(edgeR)
+library(DESeq2)
 ```
 read the six `.txt` files listed in `Coinfection.targets`.
+
 ```{r}
 Coinfection.orig <- readDGE(Coinfection.targets, header=F)
 ```
